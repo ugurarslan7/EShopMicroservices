@@ -10,14 +10,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Discount.Grpc.Migrations
 {
     [DbContext(typeof(DiscountContext))]
-    [Migration("20250409150617_InitialCatalog")]
-    partial class InitialCatalog
+    [Migration("20240202091837_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "9.0.4");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.1");
 
             modelBuilder.Entity("Discount.Grpc.Models.Coupon", b =>
                 {
@@ -38,22 +38,22 @@ namespace Discount.Grpc.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Coupones");
+                    b.ToTable("Coupons");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
                             Amount = 150,
-                            Description = "Phone Discount",
-                            ProductName = "Iphone X"
+                            Description = "IPhone Discount",
+                            ProductName = "IPhone X"
                         },
                         new
                         {
                             Id = 2,
-                            Amount = 50,
-                            Description = "Phone Discount",
-                            ProductName = "Samsung 20"
+                            Amount = 100,
+                            Description = "Samsung Discount",
+                            ProductName = "Samsung 10"
                         });
                 });
 #pragma warning restore 612, 618
